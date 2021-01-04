@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" data-bind="value: current">
+<button data-bind="click: on_click">add</button>
+
+
+<span data-bind="text: name"></span>
+<span>has:</span>
+<div data-bind="foreach: names">
+    <span data-bind="text: $data"></span>
+    <br>
+</div>
+</body>
+</html>
