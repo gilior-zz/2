@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+you clicked <string data-bind="text: counter"></string> times
+<br>
+<button data-bind="click: on_click, disable: more_then_10">click me</button>
+
+<h2 data-bind="visible: more_then_10">too many clicks
+    <button data-bind="click: reset">reset clicks</button>
+</h2>
+</body>
+</html>

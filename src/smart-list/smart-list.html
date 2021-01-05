@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form data-bind="submit: addItem">
+    <input type="text" data-bind="value: item_to_add">
+    <button type="submit">add item</button>
+   <p>ur items:</p>
+    <select multiple="multiple" width="50" name="" id="" data-bind="options: items,selectedOptions:selectedItems"></select>
+    <br>
+    <br>
+    <br>
+    <button data-bind="click: on_remove">remove</button>
+    <button data-bind="click: on_sort">sort</button>
+</form>
+
+
+</body>
+</html>

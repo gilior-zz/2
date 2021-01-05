@@ -16,6 +16,10 @@ class Children {
         this.current("");
         console.log(this.names())
     }
+
+    on_remove=(child:string)=>{
+        this.names.remove(child);
+    }
 }
 
 export default {viewModel: Children, template: template}
