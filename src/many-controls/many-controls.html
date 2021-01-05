@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="form">
+    <form>
+        <table>
+            <tr>
+                <td>Text value (updates on change):</td>
+                <td>
+                    <input type="text" data-bind="value: text_value">
+                </td>
+            </tr>
+            <tr>
+                <td>Text value (updates on keystroke):</td>
+                <td>
+                    <input type="text" data-bind="textInput: text_value">
+                </td>
+            </tr>
+            <tr>
+                <td>Text value (updates on change):</td>
+                <td>
+                    <textarea type="text" data-bind="value: text_value"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td>
+                    <input type="password" data-bind="value: pwd">
+                </td>
+            </tr>
+            <tr>
+                <td>Checkbox:</td>
+                <td>
+                    <input type="checkbox" data-bind="checked: bool_value">
+                </td>
+            </tr>
+            <tr>
+                <td>Drop-down list:</td>
+                <td>
+                    <select name="" id="" data-bind="options: options, value:selected_option"></select>
+                </td>
+            </tr>
+            <tr>
+                <td>Multi-select drop-down list:</td>
+                <td>
+                    <select multiple="multiple" name="" id=""
+                            data-bind="options: options, selectedOptions:multi_selected_option"></select>
+                </td>
+            </tr>
+            <tr>
+                <td>Radio buttons:</td>
+                <td data-bind="foreach: options">
+<!--                    <span data-bind="text: $data">-->
+                       <input name="aaa" type="radio" data-bind="checked: $parent.radio_selection, value:$data">
+                    <span data-bind="text: $data"></span>
+<!--                    </span>-->
+                    <!--                    <input type="radio" data-bind="value: $data"> alpha-->
+                    <!--                    <input type="radio" data-bind="value: radio_selection"> alpha-->
+                    <!--                    <input type="radio" data-bind="value: radio_selection"> beta-->
+                    <!--                    <input type="radio" data-bind="value: radio_selection"> gamma-->
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div class="model">
+    <table>
+        <tr>
+            <td>Text value:</td>
+            <td><span data-bind="text: text_value"></span></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><span data-bind="text: pwd"></span></td>
+        </tr>
+        <tr>
+            <td>Bool value:</td>
+            <td><span data-bind="text: bool_value"></span></td>
+        </tr>
+        <tr>
+            <td>Selected option:</td>
+            <td><span data-bind="text: selected_option"></span></td>
+        </tr>
+        <tr>
+            <td>Multi-selected options:</td>
+            <td><span data-bind="text: multi_selected_option"></span></td>
+        </tr>
+        <tr>
+            <td>Radio button selection::</td>
+            <td><span data-bind="text: radio_selection"></span></td>
+        </tr>
+    </table>
+</div>
+
+
+</body>
+</html>
