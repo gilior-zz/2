@@ -5,7 +5,22 @@
     <title>Title</title>
 </head>
 <body>
-
+<div >
+    <ul data-bind="foreach: {data:parents, as: 'parent'}">
+        <li>
+            <span data-bind="text: parent.name"></span>
+            <span>has</span>
+            <span data-bind="text: parent.children.length"></span>
+            <span>children:</span>
+            <button data-bind="click: $parent.on_add_child, attr: {'index': $index}">add child</button>
+            <ul data-bind="foreach: {data: parent.children, as:'child'}">
+                <li>
+                    <span data-bind="text: child"></span>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
 
 
 </body>
