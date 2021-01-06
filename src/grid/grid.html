@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table data-bind="foreach:{data: pages, as: page">
+    <tr data-bind="foreach: columns">
+        <th data-bind="text: $data"></th>
+    </tr>
+    <tr data-bind="foreach: {data:page.rows, as: row}">
+        <td>
+            <span data-bind="text: row.name"></span>
+            <span data-bind="text: row.count"></span>
+            <span data-bind="text: row.price"></span>
+        </td>
+    </tr>
+</table>
+<span>Pages:</span>
+<span data-bind="foreach: pages, text:$index">
+<!--    <span data-bind="text:$index"></span>-->
+</span>
+</body>
+</html>
