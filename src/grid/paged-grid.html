@@ -5,13 +5,18 @@
     <title>Title</title>
 </head>
 <body>
-<div data-bind="component: {name:grid_obj,params:{page_size:3, columns:['Item Name','Sales Count','Price'],postbox:postbox}}"></div>
+<div data-bind="component: {name:grid_obj,params:{page_size:3, columns:['Item Name','Sales Count','Price']
+,add_item:add_item
+,jump_to_first_page:jump_to_first_page
+,on_sort_by_name:on_sort_by_name
+}}
+"></div>
 <!--<grid params="page_size:3, columns:['Item Name','Sales Count','Price']"></grid>-->
 
-    <button data-bind="click: add_item">add item</button>
+<button data-bind="click: on_add_item">add item</button>
 
-<!--<button>sort by name</button>-->
-<!--<button>jump to first page</button>-->
+<button data-bind="click: on_sort_by_name">sort by name</button>
+<button data-bind="click: jump_to_first_page">jump to first page</button>
 
 </body>
 </html>

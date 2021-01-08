@@ -13,16 +13,32 @@ class Page {
 }
 
 class Grid {
+    active_page: Observable<Page> | undefined;
     page_size: Observable<number> = ko.observable(0);
     columns: ObservableArray<string> = ko.observableArray();
     pages: ObservableArray<Page> = ko.observableArray();
 
-    constructor(params: { page_size: number, columns: string[], postbox: Observable }) {
+    constructor(params: { page_size: number, columns: string[]
+        , sort_by_name: Observable
+        , jump_to_first_page: Observable
+        , add_item: Observable
+    }) {
+
         this.page_size(params.page_size);
         for (const column of params.columns)
             this.columns.push(column);
 
-        params.postbox.subscribe((newValue) => {
+        params.sort_by_name.subscribe((newValue) => {
+            console.log(newValue);
+            this.add_item();
+        }, this, "mytopic");
+
+        params.add_item.subscribe((newValue) => {
+            console.log(newValue);
+            this.add_item();
+        }, this, "mytopic");
+
+        params.jump_to_first_page.subscribe((newValue) => {
             console.log(newValue);
             this.add_item();
         }, this, "mytopic");

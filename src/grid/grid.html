@@ -9,20 +9,35 @@
     <tr data-bind="foreach: $parent.columns">
         <th data-bind="text: $data"></th>
     </tr>
+    <!-- ko with:: active_page -->
+        <tr>
+            <td>
+                <span data-bind="text: name"></span>
+            </td>
+            <td>
+                <span data-bind="text: count"></span>
+            </td>
+            <td>
+                <span data-bind="text: price"></span>
+            </td>
+        </tr>
+    <!-- /ko -->
+
+
     <!-- ko foreach: {data:page.rows, as: 'row'} -->
-    <tr>
-        <td>
-            <span data-bind="text: row.name"></span>
+<!--    <tr>-->
+<!--        <td>-->
+<!--            <span data-bind="text: row.name"></span>-->
 
 
-        </td>
-        <td>
-            <span data-bind="text: row.count"></span>
-        </td>
-        <td>
-            <span data-bind="text: row.price"></span>
-        </td>
-    </tr>
+<!--        </td>-->
+<!--        <td>-->
+<!--            <span data-bind="text: row.count"></span>-->
+<!--        </td>-->
+<!--        <td>-->
+<!--            <span data-bind="text: row.price"></span>-->
+<!--        </td>-->
+<!--    </tr>-->
     <!-- /ko -->
 <!--    <tr data-bind="foreach: {data:page.rows, as: 'row'}">-->
 <!--        <td>-->
@@ -39,8 +54,8 @@
 <!--    </tr>-->
 </table>
 <span>Pages:</span>
-<!--<span data-bind="foreach: pages, text:$index">-->
-<!--&lt;!&ndash;    <span data-bind="text:$index"></span>&ndash;&gt;-->
-<!--</span>-->
+<!-- ko foreach: pages-->
+<span data-bind="text:$index"></span>
+<!-- /ko -->
 </body>
 </html>

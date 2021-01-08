@@ -6,7 +6,9 @@ import Grid from './grid'
 // ko.components.register('grid',Grid);
 
 class GridPager {
-     postbox =  ko.observable();
+    add_item =  ko.observable();
+    sort_by_name =  ko.observable();
+    jump_to_first_page =  ko.observable();
 
 grid_obj:Observable<string>=ko.observable('grid');
     constructor() {
@@ -17,9 +19,15 @@ grid_obj:Observable<string>=ko.observable('grid');
         console.log(this.grid_obj())
     }
 
-    add_item=()=>{
-        this.postbox.notifySubscribers('value', "mytopic");
+    on_add_item=()=>{
+        this.add_item.notifySubscribers('value', "mytopic");
+    }
 
+    on_sort_by_name=()=>{
+        this.sort_by_name.notifySubscribers('value', "mytopic");
+    }
+    on_jump_to_first_page=()=>{
+        this.jump_to_first_page.notifySubscribers('value', "mytopic");
     }
 
 }
