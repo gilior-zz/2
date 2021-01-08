@@ -8,6 +8,7 @@ import SmartList from './smart-list/smart-list'
 import ManyControls from './many-controls/many-controls'
 import Collections from "./collections/collections";
 import GridPager from "./grid/paged-grid";
+import Grid from "./grid/grid";
 ko.components.register('children',Children);
 ko.components.register('hello',Hello);
 ko.components.register('counter',Counter);
@@ -16,6 +17,8 @@ ko.components.register('smart-list',SmartList);
 ko.components.register('many-controls',ManyControls);
 ko.components.register('collections',Collections);
 ko.components.register('paged-grid',GridPager);
+ko.components.register('grid',Grid);
+
 class Person{
     name:Observable<string>=ko.observable("lior");
     constructor() {

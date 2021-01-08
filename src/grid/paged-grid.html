@@ -5,12 +5,13 @@
     <title>Title</title>
 </head>
 <body>
-<grid params="page_size:3, columns:['Item Name','Sales Count','Price']"></grid>
-<!-- ko with: currentSec -->
-<button data-bind="click: add_item">add item</button>
-<!-- /ko -->
-<button>add itemsort by name</button>
-<button>add itemsort by namejump to first page</button>
+<div data-bind="component: {name:grid_obj,params:{page_size:3, columns:['Item Name','Sales Count','Price'],postbox:postbox}}"></div>
+<!--<grid params="page_size:3, columns:['Item Name','Sales Count','Price']"></grid>-->
+
+    <button data-bind="click: add_item">add item</button>
+
+<!--<button>sort by name</button>-->
+<!--<button>jump to first page</button>-->
 
 </body>
 </html>
